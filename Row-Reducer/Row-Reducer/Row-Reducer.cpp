@@ -27,7 +27,7 @@ vector<vector<float> > inputMatrice(int antalrækker, int antalsøjler)
     return matrice;
 }
 
-vector<vector<float> > randomMatrice(int antalrækker, int antalsøjler, int seed = 0)
+vector<vector<float> > randomMatrice(int antalrækker, int antalsøjler, int seed = 0, int min = -99, int max = 99)
 {
     //Denne funktion laver en matrice med de indtastede dimensioner, som fyldes med tilfældige tal.
     vector<vector<float>> matrice(antalrækker, vector<float>(antalsøjler));
@@ -36,13 +36,14 @@ vector<vector<float> > randomMatrice(int antalrækker, int antalsøjler, int seed 
     {
         seed = time(NULL);
     }
+    int range = max - min;
     srand(seed);
     // Vi ber om input og sætter disse i vores matrice.
     for (int i = 0; i < antalrækker; i++)
     {
         for (int j = 0; j < antalsøjler; j++)
         {
-           int tilfældigtTal =  rand() % 199 - 99;
+           int tilfældigtTal =  rand() % range + min;
             matrice[i][j] = tilfældigtTal;
         }
     }
