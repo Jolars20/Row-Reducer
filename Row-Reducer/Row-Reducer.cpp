@@ -233,7 +233,7 @@ vector<vector<float> > rowReduceMatrice(vector < vector<float>> inputMatrice)
 
                         for (int k = j + 1; k < antalsøjler; k++)
                         {
-                            outputMatrice[h][k] = outputMatrice[h][k] * (1 - targetValue);
+                            outputMatrice[h][k] = outputMatrice[h][k] * (1 - targetValue); // det her er helt sikkert forkert
                         }
                     }
                 }
